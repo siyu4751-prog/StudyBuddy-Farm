@@ -1,0 +1,414 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  background: #f5f7ee;
+  color: #26332b;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 28px 8% 60px;
+  background:
+    radial-gradient(circle at top left, rgba(182, 239, 88, 0.45), transparent 34%),
+    linear-gradient(135deg, #f8ffe8 0%, #eaf8d8 48%, #d7f1b5 100%);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 90px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  color: #536157;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.tag,
+.section-label {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(86, 159, 67, 0.13);
+  color: #397b2f;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 1.04;
+  letter-spacing: -2px;
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 34px;
+}
+
+h3 {
+  margin: 0 0 10px;
+}
+
+.desc,
+.muted {
+  color: #647067;
+  line-height: 1.8;
+}
+
+.desc {
+  max-width: 720px;
+  font-size: 18px;
+}
+
+.hero-actions,
+.timer-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn,
+.task-form button,
+.small-btn,
+.timer-controls button,
+.shop-item {
+  border: 0;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.task-form button:hover,
+.small-btn:hover,
+.timer-controls button:hover,
+.shop-item:hover {
+  transform: translateY(-2px);
+}
+
+.btn {
+  padding: 14px 22px;
+}
+
+.primary,
+.task-form button {
+  background: #2f7d32;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(47, 125, 50, 0.24);
+}
+
+.ghost {
+  background: #fff;
+  color: #2f7d32;
+}
+
+.pet-card,
+.panel,
+.stat-card,
+.note-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 32px;
+  box-shadow: 0 24px 60px rgba(77, 112, 66, 0.12);
+}
+
+.pet-card {
+  padding: 34px;
+  text-align: center;
+}
+
+.pet {
+  font-size: 120px;
+  filter: drop-shadow(0 16px 20px rgba(48, 86, 39, 0.16));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.progress-wrap {
+  width: 100%;
+  height: 14px;
+  margin: 18px 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dbe9d3;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #74c043;
+  border-radius: 999px;
+}
+
+.pet-tip {
+  color: #68756b;
+}
+
+main {
+  width: min(1120px, 92%);
+  margin: -40px auto 0;
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  padding: 26px;
+  text-align: center;
+}
+
+.stat-card span {
+  display: block;
+  font-size: 40px;
+  font-weight: 900;
+  color: #2f7d32;
+}
+
+.stat-card p {
+  margin: 8px 0 0;
+  color: #667064;
+}
+
+.panel {
+  margin-bottom: 28px;
+  padding: 34px;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr;
+  gap: 26px;
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: 1fr 140px 90px;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.task-form input,
+.task-form select {
+  width: 100%;
+  border: 1px solid #d7e3cf;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff;
+  outline: none;
+}
+
+.task-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #f6f9f1;
+}
+
+.task-title {
+  flex: 1;
+}
+
+.task-item.done .task-title {
+  color: #879184;
+  text-decoration: line-through;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-actions button {
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.note-card {
+  padding: 28px;
+  background: #fffaf0;
+}
+
+.small-btn {
+  margin-top: 18px;
+  padding: 12px 16px;
+  background: #26332b;
+  color: #fff;
+}
+
+.timer-panel {
+  text-align: center;
+}
+
+.timer-box {
+  margin: 20px auto 0;
+  max-width: 560px;
+}
+
+.timer-display {
+  margin: 20px 0;
+  font-size: clamp(62px, 10vw, 112px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  color: #26332b;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.timer-controls button {
+  padding: 12px 16px;
+  background: #edf6e5;
+  color: #397b2f;
+}
+
+.timer-actions {
+  justify-content: center;
+}
+
+.shop-grid,
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.shop-item {
+  min-height: 150px;
+  padding: 18px;
+  background: #f7fbf3;
+  color: #26332b;
+  font-size: 44px;
+}
+
+.shop-item span,
+.shop-item small {
+  display: block;
+}
+
+.shop-item span {
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+.shop-item small {
+  margin-top: 6px;
+  color: #68756b;
+  font-size: 13px;
+}
+
+.feature-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.feature-grid div {
+  padding: 22px;
+  border-radius: 22px;
+  background: #f7fbf3;
+}
+
+.feature-grid p {
+  margin: 0;
+  color: #657064;
+  line-height: 1.7;
+}
+
+footer {
+  padding: 40px 20px 54px;
+  text-align: center;
+  color: #758071;
+}
+
+@media (max-width: 850px) {
+  .nav,
+  .nav-links,
+  .hero-content,
+  .two-column,
+  .stats-section,
+  .shop-grid,
+  .feature-grid,
+  .task-form {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 52px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 24px 5% 80px;
+  }
+
+  main {
+    margin-top: -50px;
+  }
+
+  .pet {
+    font-size: 92px;
+  }
+}
