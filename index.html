@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusPet 学习宠物养成器</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">🐾 FocusPet</div>
+      <div class="nav-links">
+        <a href="#tasks">任务</a>
+        <a href="#timer">专注</a>
+        <a href="#shop">能量商店</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <div>
+        <p class="tag">把学习变成养成游戏</p>
+        <h1>完成任务，喂养你的专注小宠物</h1>
+        <p class="desc">
+          FocusPet 是一个适合学生使用的轻量级学习管理工具。你可以添加学习任务、开启番茄钟、获得能量值，
+          再用能量给小宠物升级。所有数据会自动保存在浏览器本地。
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#tasks">开始学习</a>
+          <a class="btn ghost" href="#about">查看说明</a>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <div id="petEmoji" class="pet">🐣</div>
+        <h2 id="petName">青柠小兽</h2>
+        <p>等级 <span id="level">1</span> · 能量 <span id="energy">0</span></p>
+        <div class="progress-wrap">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p class="pet-tip" id="petTip">完成一个任务，小宠物就会更有精神。</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="stats-section">
+      <div class="stat-card">
+        <span id="doneCount">0</span>
+        <p>已完成任务</p>
+      </div>
+      <div class="stat-card">
+        <span id="focusCount">0</span>
+        <p>专注次数</p>
+      </div>
+      <div class="stat-card">
+        <span id="totalMinutes">0</span>
+        <p>累计分钟</p>
+      </div>
+    </section>
+
+    <section id="tasks" class="panel two-column">
+      <div>
+        <p class="section-label">Task List</p>
+        <h2>今日学习任务</h2>
+        <p class="muted">建议把任务写小一点，比如“背 20 个单词”“完成一页线代题”。</p>
+
+        <form id="taskForm" class="task-form">
+          <input id="taskInput" type="text" placeholder="输入今天要完成的任务..." maxlength="40" required />
+          <select id="taskType">
+            <option value="📘">课程复习</option>
+            <option value="💻">编程练习</option>
+            <option value="📝">作业论文</option>
+            <option value="🎧">英语听力</option>
+          </select>
+          <button type="submit">添加</button>
+        </form>
+
+        <ul id="taskList" class="task-list"></ul>
+      </div>
+
+      <div class="note-card">
+        <h3>今日建议</h3>
+        <p id="dailyAdvice">先完成最简单的一件事，让自己进入状态。</p>
+        <button id="changeAdvice" class="small-btn">换一句</button>
+      </div>
+    </section>
+
+    <section id="timer" class="panel timer-panel">
+      <p class="section-label">Focus Timer</p>
+      <h2>番茄专注钟</h2>
+      <p class="muted">完成一次专注可以获得 15 点能量。时间可以自己调整。</p>
+      <div class="timer-box">
+        <div id="timerDisplay" class="timer-display">25:00</div>
+        <div class="timer-controls">
+          <button data-min="15">15 分钟</button>
+          <button data-min="25">25 分钟</button>
+          <button data-min="45">45 分钟</button>
+        </div>
+        <div class="timer-actions">
+          <button id="startTimer" class="btn primary">开始</button>
+          <button id="pauseTimer" class="btn ghost">暂停</button>
+          <button id="resetTimer" class="btn ghost">重置</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="panel shop-panel">
+      <p class="section-label">Energy Shop</p>
+      <h2>能量商店</h2>
+      <p class="muted">用学习获得的能量值给小宠物换状态。</p>
+      <div class="shop-grid">
+        <button class="shop-item" data-cost="30" data-pet="🐥" data-name="认真小鸡">🐥<span>认真小鸡</span><small>30 能量</small></button>
+        <button class="shop-item" data-cost="60" data-pet="🐱" data-name="自律小猫">🐱<span>自律小猫</span><small>60 能量</small></button>
+        <button class="shop-item" data-cost="100" data-pet="🦊" data-name="高效小狐">🦊<span>高效小狐</span><small>100 能量</small></button>
+        <button class="shop-item" data-cost="150" data-pet="🐉" data-name="期末神龙">🐉<span>期末神龙</span><small>150 能量</small></button>
+      </div>
+    </section>
+
+    <section id="about" class="panel about-section">
+      <p class="section-label">About</p>
+      <h2>项目亮点</h2>
+      <div class="feature-grid">
+        <div>
+          <h3>本地存储</h3>
+          <p>任务、能量、等级会保存在浏览器中，刷新页面不会丢失。</p>
+        </div>
+        <div>
+          <h3>游戏化学习</h3>
+          <p>通过任务完成和番茄钟奖励，让学习过程更有反馈感。</p>
+        </div>
+        <div>
+          <h3>适合 GitHub 展示</h3>
+          <p>纯 HTML、CSS、JavaScript 编写，适合新手练习和简历项目展示。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for students who are trying to study a little better every day.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
